@@ -14,12 +14,13 @@ let isError = false;
 
 //functions
 function cleanInputString(str){
-    const strArray =str.split('');
-    const cleanStrArray =[];
+    //Cleaning the string(Removing any +,- Or " "(space) in the string)
+    //Regular Expressions:Character Class
+    const regex = /[+-\s]/g;
+    return str.replace(regex,"");
+}
 
-    for (let i = 0;i < strArray.length -1; i++){
-        if (!["+", "-", " "].includes(strArray[i])){
-            cleanStrArray.push(strArray[i]);
-        }
-    }
+function isInvalidInput(str){
+    //Filtering Exponential Notation
+    const regex = /e/;
 }
