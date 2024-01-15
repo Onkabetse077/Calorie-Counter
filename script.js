@@ -23,4 +23,14 @@ function cleanInputString(str){
 function isInvalidInput(str){
     //Filtering Exponential Notation
     const regex = /[0-9]+e\d+/i;
+
+    return str.match(regex);
+}
+
+function addEntry(){
+    //template literals
+    const targetInputContainer = document.querySelector(`#${entryDropdown.value()} .input-container`);
+
+    const entryNumber = targetInputContainer.querySelectorAll('input[type = "text"]').length;
+    const HTMLString = `\n<label for="${entryDropdown.value}-${entryNumber}-name">Entry ${entryNumber} Name</label>\``;
 }
