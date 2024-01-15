@@ -22,5 +22,5 @@ function cleanInputString(str){
 
 function isInvalidInput(str){
     //Filtering Exponential Notation
-    const regex = /e/;
+    const regex = /[0-9]+e\d+/i;
 }
