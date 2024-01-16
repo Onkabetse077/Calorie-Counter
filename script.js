@@ -31,11 +31,24 @@ function addEntry(){
     //template literals
     const targetInputContainer = document.querySelector(`#${entryDropdown.value()} .input-container`);
 
-    const entryNumber = targetInputContainer.querySelectorAll('input[type = "text"]').length;
+    const entryNumber = targetInputContainer.querySelectorAll('input[type = "text"]').length + 1;
     //New-Line
     const HTMLString = `
         <label for="${entryDropdown.value}-${entryNumber}-name">Entry ${entryNumber} Name</label>
         <input type="text" id="${entryDropdown.value}-${entryNumber}-name" placeholder="Name" />
         <label for="${entryDropdown.value}-${entryNumber}-calories">Entry ${entryNumber} Calories</label>
         <input type="number" id="${entryDropdown.value}-${entryNumber}-calories" placeholder="Calories" min="0" />`;
+    targetInputContainer.insertAdjacentElement("beforeend", HTMLString);
 }
+function getCaloriesFromInputs(list){
+    let calories = 0;
+    for(let i = 0;i < list.length; i++){
+        const currVal = cleanInputString(list[i].value);
+        const invalidInputMatch = isInvalidInput(currVal);
+
+        if (invalidInputMatch){}
+    }
+}
+
+//Event Listener
+addEntryButton.addEventListener("click", addEntry);
