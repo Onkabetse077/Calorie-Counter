@@ -16,7 +16,7 @@ let isError = false;
 function cleanInputString(str){
     //Cleaning the string(Removing any +,- Or " "(space) in the string)
     //Regular Expressions:Character Class
-    const regex = /[+-\s]/g;
+    const regex = /[+-\\s]/g;
     return str.replace(regex,"");
 }
 
@@ -38,7 +38,8 @@ function addEntry(){
         <input type="text" id="${entryDropdown.value}-${entryNumber}-name" placeholder="Name" />
         <label for="${entryDropdown.value}-${entryNumber}-calories">Entry ${entryNumber} Calories</label>
         <input type="number" id="${entryDropdown.value}-${entryNumber}-calories" placeholder="Calories" min="0" />`;
-    targetInputContainer.insertAdjacentElement("beforeend", HTMLString);
+
+        targetInputContainer.insertAdjacentElement("beforeend", HTMLString);
 }
 
 function calculateCalories(e){
