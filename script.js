@@ -39,7 +39,7 @@ function addEntry(){
         <label for="${entryDropdown.value}-${entryNumber}-calories">Entry ${entryNumber} Calories</label>
         <input type="number" id="${entryDropdown.value}-${entryNumber}-calories" placeholder="Calories" min="0" />`;
 
-        targetInputContainer.insertAdjacentElement("beforeend", HTMLString);
+        targetInputContainer.insertAdjacentElement('beforeend', HTMLString);
 }
 
 function calculateCalories(e){
